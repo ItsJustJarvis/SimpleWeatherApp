@@ -1,0 +1,24 @@
+{
+    "name": "dgl213-module-3",
+    "version": "1.0.0",
+    "description": "A project for DGL 213 Module 3 based on code developed by The Coding Train",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "author": "Reeve Jarvis",
+    "license": "MIT",
+    "devDependencies": {
+        "eslint": "^7.11.0"
+    },
+    "dependencies": {
+        "express": "^4.17.1",
+        "leaflet": "^1.7.1",
+        "node": "^17.0.1",
+        "request": "^2.88.2"
+    }
+}

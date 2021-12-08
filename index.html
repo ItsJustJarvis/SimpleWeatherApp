@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- 
+            Name:       Reeve Jarvis
+            Course:     DGL-213
+            Section:    DLU1
+            Original:   Module #3 Milestone #2
+
+            Current:    Module #3.5 Refactoring
+            Latest Update: 11/18/2021
+
+            Filename:   index.html
+
+            ** To allow data response and avoid CORS issues, this must be run with a proxy server. See proxy.js for instructions. **
+         -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=\, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+            crossorigin="anonymous"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="node_modules\leaflet\dist\leaflet.css" />
+        <style>
+            #locationMap {
+                height: 100%;
+                width: 100%;
+            }
+            body {
+                font-family: "Open Sans", sans-serif;
+            }
+            h1,
+            h2 {
+                font-weight: bold;
+            }
+            .area {
+                background-color: rgba(0, 180, 0, 0.1);
+            }
+        </style>
+        <title>Simple Weather App</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 my-3 p-2 border border-3 border-dark area">
+                    <h1 class="text-center">Simple Weather App</h1>
+                    <p class="text-center">Created by Reeve Jarvis - ItsJustJarvis Development</p>
+                    <p class="text-center">Weather information obtained from <a href="https://www.metaweather.com/">metaweather.com</a></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 mb-3 p-0 w-100 d-flex border border-3 border-dark area">
+                    <div class="col-4 p-3 d-flex flex-column border-end border-3 border-dark">
+                        <div class="col-12 mb-3">
+                            <h2 class="border-bottom border-dark">Weather Search:</h2>
+                        </div>
+                        <div class="col-12 mb-3 d-flex flex-column">
+                            <p class="mb-3"><strong>Search with current location:</strong></p>
+                            <button type="button" class="btn btn-dark w-75" id="currentLocation">Current Location</button>
+                        </div>
+                        <div class="form-group col-12 mb-3 d-flex flex-column">
+                            <p class="mb-3"><strong>Search by City Name:</strong></p>
+                            <input class="form-control mb-1 w-75" type="text" placeholder="Enter city name" id="city1" />
+                            <button type="button" class="btn btn-dark w-75" id="citySearch">Search</button>
+                        </div>
+                        <div class="form-group col-12 mb-3 d-flex flex-column">
+                            <p class="mb-3"><strong>Search by City Name and Date:</strong></p>
+                            <input class="form-control mb-1 w-75" type="text" placeholder="Enter city name" id="city2" />
+                            <input class="form-control mb-1 w-75" type="date" placeholder="Enter date" id="date" />
+                            <button type="button" class="btn btn-dark w-75" id="cityDateSearch">Search</button>
+                        </div>
+                    </div>
+                    <div id="locationMap"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 mb-3 border border-3 border-dark area">
+                    <h2 class="p-2 border-bottom border-dark">Closest Weather Data Available:</h2>
+                    <div class="p-2 border-bottom border-dark d-flex flex-row align-items-center justify-content-around">
+                        <p><strong>Name: </strong><span id="title"></span></p>
+                        <p><strong>Latitude: </strong><span id="lat"></span>°</p>
+                        <p><strong>Longitude: </strong><span id="lon"></span>°</p>
+                    </div>
+                    <span class="d-flex flex-wrap p-2 mx-auto" id="weatherOutput"></span>
+                </div>
+            </div>
+        </div>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"
+        ></script>
+        <script src="node_modules\leaflet\dist\leaflet.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>
